@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div ng-app="myApp">
+        <div>
+            <p>HOŞGELDİN {{user}}!!!</p>
+            <!-- <p ng-bind="'HOŞGELDİN ' + user"></p> -->
+            <label for="name">Kullanıcı Adı:</label>
+            <input type="text" name="name" ng-model="user">
+        </div>
+        <hr>
+        <div ng-init="job='Computer Engineer'">
+            <p>ng-init uygulama değişkenlerini başlatır, yani ilk variable değerini atar...</p>
+            <p>She is a <span ng-bind="job"></span></p>
+        </div>
+        <hr>
+        <div ng-init="fatura='telefon';no=5426525241">
+            AD : <input type="text" ng-model="firstName">
+            SOYAD : <input type="text" ng-model="lastName">
+            <button id="btn1">Öde</button>
+            <p class="fatura" style="display: none;">Sayın {{firstName + ' ' + lastName + ' '+ no + ' numaralı ' + fatura }} faturanız ödenmiştir.</p>
+        </div>
+        <hr>
+        <div ng-controller="myCtrl">
+            <input ng-model="name">
+            <h1>My name is {{name}}</h1>
+        </div>
+        <hr> 
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.name = "Sevgi Güçlü";
+        });
+        // app.run(function($rootScope) {
+        //     $rootScope.firstName = "Sevgi";
+        // });
+    </script>
+    <script src="script.js"></script>  
+</body>
+</html>
